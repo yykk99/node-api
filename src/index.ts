@@ -6,7 +6,6 @@ import { env } from './config/env';
 dotenv.config();
 connectDB();
 
-const PORT = env.PORT;
-app.listen(PORT, () => {
-  console.log(`Server started on http://localhost:${PORT}`);
+app.listen(env.PORT, () => {
+  console.log(`Server started on http://localhost:${env.PORT}`);
 });
