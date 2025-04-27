@@ -16,7 +16,7 @@
 - GET /api/posts 投稿一覧を取得
 - GET /api/posts/:id 特定の投稿を取得
 - PUT /api/posts/:id 投稿を編集
-- GET /api/posts/:id 投稿を削除
+- DELETE /api/posts/:id 投稿を削除
 
 ### いいね・フォロー
 

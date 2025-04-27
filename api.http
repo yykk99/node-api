@@ -1,0 +1,48 @@
+@URL=http://localhost:3000/api
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBlMmQ5ODk4NDdmMTRkNTIwY2VlMzAiLCJpYXQiOjE3NDU3NTk2NDAsImV4cCI6MTc0NjM2NDQ0MH0.R2L5QwjLXP8YdtoH9BpUsjDfW4Z5L-ZUontJQbTGvec
+
+### Register
+POST {{URL}}/auth/register
+Content-Type: application/json
+
+{
+    "username": "test_user",
+    "email": "testuser@test.com",
+    "password": "password"
+}
+
+### Login
+POST {{URL}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "testuser@test.com",
+    "password": "password"
+}
+
+### GetMe
+GET {{URL}}/users/me
+Authorization: Bearer {{token}}
+
+### UpdateProfile
+PUT {{URL}}/users/me
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "username": "test_update",
+    "email": "testuser.update@test.com"
+}
+
+### DeleteAccount
+DELETE {{URL}}/users/me
+Authorization: Bearer {{token}}
+
+### CreatePost
+POST {{URL}}/posts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "content": "test content"   
+}
