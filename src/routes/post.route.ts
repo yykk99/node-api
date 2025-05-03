@@ -5,6 +5,7 @@ import {
   deletePost,
   getAllPosts,
   getPostById,
+  likePost,
   updatePost,
 } from '../controllers/post.controller';
 
@@ -14,5 +15,6 @@ router.get('/', authMiddleware, getAllPosts);
 router.get('/:id', authMiddleware, getPostById);
 router.put('/:id', authMiddleware, updatePost);
 router.delete('/:id', authMiddleware, deletePost);
+router.post('/:id/like', authMiddleware, likePost);
 
 export default router;

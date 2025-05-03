@@ -88,3 +88,26 @@ export const deletePost = async (req: AuthenticatedRequest, res: Response) => {
     res.status(500).json({ message: 'Failed to delete post', error: error });
   }
 };
+
+export const likePost = async (req: AuthenticatedRequest, res: Response) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+      res.status(404).json({});
+      return;
+    }
+
+    const userId = req.user?._id;
+
+    if (post.likes.includes(userId)) {
+      res.status(400).json({ message: 'already liked' });
+      return;
+    }
+
+    post.likes.push(userId);
+    await post.save();
+    res.status(200).json({ message: 'いいね', count: post.likes.length });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};

@@ -67,3 +67,7 @@ Authorization: Bearer {{token}}
 ### DeletePost
 DELETE {{URL}}/posts/68156fb2329f0e40a38f3934
 Authorization: Bearer {{token}}
+
+### LikePost
+POST {{URL}}/posts/68156fb1329f0e40a38f3931/like
+Authorization: Bearer {{token}}
