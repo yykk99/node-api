@@ -46,3 +46,24 @@ Authorization: Bearer {{token}}
 {
     "content": "test content"   
 }
+
+### GetAllPosts
+GET {{URL}}/posts
+Authorization: Bearer {{token}}
+
+### GetPostById
+GET {{URL}}/posts/68156fb2329f0e40a38f3934
+Authorization: Bearer {{token}}
+
+### UpdatePost
+PUT {{URL}}/posts/68156fb2329f0e40a38f3934
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "content": "update test content"
+}
+
+### DeletePost
+DELETE {{URL}}/posts/68156fb2329f0e40a38f3934
+Authorization: Bearer {{token}}
